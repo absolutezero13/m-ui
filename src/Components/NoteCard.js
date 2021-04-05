@@ -14,7 +14,6 @@ import React from "react";
 const useStyles = makeStyles({
   avatar: {
     backgroundColor: (note) => {
-      if (note.category === "work") return yellow[700];
       if (note.category === "money") return green[500];
       if (note.category === "todos") return pink[700];
       if (note.category === "reminders") return blue[500];
