@@ -5,6 +5,30 @@
       "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       "category": "reminders",
       "id": 1
+    },
+    {
+      "title": "Asdasd",
+      "details": "hahahahaha",
+      "category": "school",
+      "id": 2
+    },
+    {
+      "title": "Lmao ",
+      "details": "Moeny 1!!!",
+      "category": "work",
+      "id": 3
+    },
+    {
+      "title": "Lmao",
+      "details": "Kekw",
+      "category": "todos",
+      "id": 4
+    },
+    {
+      "title": "Cofde",
+      "details": "import {\n  Avatar,\n  Card,\n  CardContent,\n  CardHeader,\n  IconButton,\n  makeStyles,\n  Typography,\n} from \"@material-ui/core\";\nimport { blue, green, grey, pink, yellow } from \"@material-ui/core/colors\";\nimport { DeleteOutlined } from \"@material-ui/icons\";\nimport React from \"react\";\n\nconst useStyles = makeStyles({\n  avatar: {\n    backgroundColor: (note) => {\n      if (note.category === \"work\") return yellow[700];\n      if (note.category === \"money\") return green[500];\n      if (note.category === \"todos\") return pink[700];\n      if (note.category === \"reminders\") return blue[500];\n      if (note.category === \"school\") return grey[500];\n    },\n  },\n});\n\nconst NoteCard = ({ note, deleteNote }) => {\n  const classes = useStyles(note);\n  return (\n    <div>\n      <Card elevation={3}>\n        <CardHeader\n          avatar={\n   ",
+      "category": "reminders",
+      "id": 5
     }
   ]
 }

@@ -6,8 +6,12 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  AppBar,
+  Toolbar,
+  Avatar,
 } from "@material-ui/core";
 import { AddCircleOutlined, SubjectOutlined } from "@material-ui/icons";
+import { format } from "date-fns";
 import React from "react";
 import {
   useHistory,
@@ -36,6 +40,13 @@ const useStyles = makeStyles((theme) => {
     title: {
       padding: theme.spacing(2),
     },
+    appbar: {
+      width: `calc(100% - ${drawerWidth}px)`,
+    },
+    toolbar: theme.mixins.toolbar,
+    date: {
+      flexGrow: 1,
+    },
   };
 });
 
@@ -57,6 +68,15 @@ const Layout = ({ children }) => {
   ];
   return (
     <div className={classes.root}>
+      <AppBar elevation={0} className={classes.appbar}>
+        <Toolbar>
+          <Typography className={classes.date}>
+            Today is {format(new Date(), "do MMMM Y")}
+          </Typography>
+          <Typography>Absolutezero</Typography>
+          {/* <Avatar src={} /> */}
+        </Toolbar>
+      </AppBar>
       <Drawer
         className={classes.drawer}
         variant="permanent"
@@ -86,7 +106,10 @@ const Layout = ({ children }) => {
           })}
         </List>
       </Drawer>
-      <div className={classes.page}>{children}</div>
+      <div className={classes.page}>
+        <div className={classes.toolbar}></div>
+        {children}
+      </div>
     </div>
   );
 };
